@@ -1,0 +1,42 @@
+/* styles.css */
+body {
+    background-color: #f0f8ff; /* Warna latar belakang biru muda */
+    color: #333; /* Warna teks default */
+    font-family: Arial, sans-serif; /* Font yang digunakan */
+}
+
+h1 {
+    color: #ff0000; /* Merah */
+}
+
+h2 {
+    color: #ff7f00; /* Oranye */
+}
+
+h3 {
+    color: #ffff00; /* Kuning */
+}
+
+h4 {
+    color: #00ff00; /* Hijau */
+}
+
+h5 {
+    color: #0000ff; /* Biru */
+}
+
+h6 {
+    color: #4b0082; /* Indigo */
+}
+
+a {
+    color: #ff1493; /* Warna tautan pink cerah */
+}
+
+a:hover {
+    color: #ff69b4; /* Warna tautan saat hover */
+}
+
+p {
+    line-height: 1.6; /* Jarak antar baris */
+}
