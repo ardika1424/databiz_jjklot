@@ -1,32 +1,32 @@
 /* styles.css */
 body {
-    background-color: #f0f8ff; /* Warna latar belakang biru muda */
+    background-color: #ffffff; /* Warna latar belakang putih */
     color: #333; /* Warna teks default */
     font-family: Arial, sans-serif; /* Font yang digunakan */
 }
 
 h1 {
-    color: #ff0000; /* Merah */
+    color: #ff5733; /* Merah cerah */
 }
 
 h2 {
-    color: #ff7f00; /* Oranye */
+    color: #33ff57; /* Hijau cerah */
 }
 
 h3 {
-    color: #ffff00; /* Kuning */
+    color: #3357ff; /* Biru cerah */
 }
 
 h4 {
-    color: #00ff00; /* Hijau */
+    color: #ff33a1; /* Pink cerah */
 }
 
 h5 {
-    color: #0000ff; /* Biru */
+    color: #ffcc33; /* Kuning cerah */
 }
 
 h6 {
-    color: #4b0082; /* Indigo */
+    color: #33ffff; /* Cyan */
 }
 
 a {
@@ -39,4 +39,14 @@ a:hover {
 
 p {
     line-height: 1.6; /* Jarak antar baris */
+}
+
+ul {
+    list-style-type: none; /* Menghilangkan bullet list */
+}
+
+li {
+    padding: 5px; /* Jarak antar item list */
+    background-color: #f0f0f0; /* Warna latar belakang item list */
+    border-radius: 5px; /* Sudut melengkung */
 }

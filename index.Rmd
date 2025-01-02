@@ -1,6 +1,6 @@
 ---
-title: "Belajar Data visualziation Rstudio"
-author: "ardika alaudin arsa-Institut Teknologi Statistika dan Bisnis Muhammadiyah"
+title: "Belajar Data visualziation ggplot dengan Rstudio"
+author: "ardika alaudin arsa - Institut Teknologi Statistika dan Bisnis Muhammadiyah"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -19,8 +19,36 @@ library(ggplot2)
 data <- data.frame (x = rnorm(100), y = rnorm(100))
 #buat plot titik
 ggplot(data, aes(y = y, x = x))+
-  geom_point()
+  geom_point()+
+  labs(title = "plot Titik", x = "sumbu x", y = "sumbu Y")+
+  theme_classic()
 ```
+
+
+```{r}
+library(ggplot2)
+#buat data frame contoh 
+data <- data.frame (x = rnorm(100), y = rnorm(100), grup = sample(c("A", "B", "C", "D"), 100, replace = TRUE))
+#buat plot titik dengan faceting
+ggplot(data, aes(x = x, y = y, color =grup))+
+  geom_point()+
+  facet_wrap(~grup)+
+  scale_color_manual(values = c("A" = "red", "B" = "blue", "C" = "yellow", "D" = "black"))+
+  theme_minimal() 
+```
+
+```{r}
+library(readr)
+lizard <- read.csv("lizards.csv")
+```
+
+```{r}
+ggplot(lizard, aes(x = total_length, y = weight))+
+  geom_point()+
+  labs(title = "plot titik", x = "sumbu total_length", y = "sumbu weight")+
+  theme_classic()
+```
+
 
 ```{=html}
 <style>
