@@ -1,5 +1,5 @@
 ---
-title: "Belajar Data visualziation ggplot dengan Rstudio"
+title: "Belajar Data visualziation dengan ggplot"
 author: "ardika alaudin arsa - Institut Teknologi Statistika dan Bisnis Muhammadiyah"
 date: "`r Sys.Date()`"
 output: 
@@ -13,6 +13,26 @@ output:
     df_print: paged
 bibliography: references.bib
 ---
+
+
+# Pengantar ggplot2
+
+Dalam dunia analisis data dan visualisasi, pemahaman yang mendalam tentang cara menyajikan informasi secara visual sangatlah penting. Salah satu alat yang paling populer dan kuat untuk visualisasi data di R adalah paket ggplot2. Dikembangkan oleh Hadley Wickham, ggplot2 mengadopsi pendekatan Grammar of Graphics, yang memungkinkan pengguna untuk membangun grafik dengan cara yang intuitif dan terstruktur. Dengan ggplot2, pengguna dapat dengan mudah membuat berbagai jenis visualisasi, mulai dari grafik sederhana hingga grafik kompleks, yang dapat membantu dalam memahami pola dan tren dalam data.
+
+Keunggulan utama dari ggplot2 terletak pada kemampuannya untuk menggabungkan berbagai elemen visual, seperti titik, garis, dan area, dalam satu plot. Pengguna dapat dengan mudah menyesuaikan elemen-elemen ini, termasuk warna, ukuran, dan bentuk, untuk menciptakan visualisasi yang menarik dan informatif. Selain itu, ggplot2 mendukung berbagai jenis data dan memungkinkan pengguna untuk menambahkan lapisan (layer) tambahan, seperti statistik dan anotasi, yang dapat memperkaya interpretasi data. Dengan demikian, ggplot2 menjadi alat yang sangat fleksibel dan dapat disesuaikan untuk berbagai kebutuhan analisis.
+
+Dalam era big data saat ini, kemampuan untuk menyajikan data secara visual dengan cara yang jelas dan menarik menjadi semakin penting. ggplot2 tidak hanya memudahkan proses pembuatan grafik, tetapi juga membantu pengguna untuk berkomunikasi dengan audiens mereka secara lebih efektif. Dengan dokumentasi yang lengkap dan komunitas pengguna yang aktif, ggplot2 terus berkembang dan menjadi salah satu paket visualisasi data yang paling banyak digunakan di R. Melalui penggunaan ggplot2, para peneliti, analis, dan ilmuwan data dapat menggali wawasan yang lebih dalam dari data mereka dan menyajikannya dengan cara yang mudah dipahami.
+
+
+# 1.1 struktur Dasar Dasar ggplot2
+
+1. data: Dataset yang akan digunakan.
+2. aes(): Fungsi untuk mendefinisikan estetika, seperti sumbu x dan y, warna, ukuran, dan                  bentuk.
+3. geometri: Jenis grafik yang ingin dibuat, seperti titik (geom_point()), garis (geom_line()),               histogram (geom_histogram()), dan lain-lain.
+4. tema: Mengatur tampilan grafik, seperti tema minimal, klasik, atau kustom.
+5. label: Menambahkan judul, label sumbu, dan legenda.
+
+  berikut di bawah ini adalah contoh data frame dan plot titik pada grafik
 ```{r}
 library(ggplot2)
 #buat data frame contoh 
@@ -25,6 +45,11 @@ ggplot(data, aes(y = y, x = x))+
 ```
 
 
+# 1.2 Menambahkan Warna dan Estetika pada grafik titik
+
+Anda dapat menambahkan estetika tambahan, seperti warna berdasarkan variabel lain. Misalnya, untuk mewarnai titik berdasarkan jumlah silinder
+
+berikut contoh grafik warna :
 ```{r}
 library(ggplot2)
 #buat data frame contoh 
@@ -37,10 +62,25 @@ ggplot(data, aes(x = x, y = y, color =grup))+
   theme_minimal() 
 ```
 
+# 1.3 Read data
+
+1. CSV (Comma-Separated Values): Format teks yang menyimpan data dalam bentuk tabel, di mana setiap baris mewakili satu entri dan setiap kolom dipisahkan oleh koma.
+2. Excel: Format spreadsheet yang umum digunakan, biasanya dengan ekstensi .xls atau .xlsx.
+3. JSON (JavaScript Object Notation): Format yang sering digunakan untuk pertukaran data, terutama dalam aplikasi web.
+4. XML (eXtensible Markup Language): Format yang digunakan untuk menyimpan dan mengangkut data.
+5. Database: Data yang disimpan dalam sistem manajemen basis data seperti MySQL, PostgreSQL, SQLite, dll.
+
+# 1.4 View lizard
+
+Untuk membaca file CSV, Anda dapat menggunakan fungsi read.csv() atau read_csv() dari paket readr.
+
 ```{r}
 library(readr)
 lizard <- read.csv("lizards.csv")
+View(lizard)
 ```
+
+berikut contoh grafik :
 
 ```{r}
 ggplot(lizard, aes(x = total_length, y = weight))+
@@ -60,23 +100,3 @@ text-align: justify}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents [@deCarvalho2012]. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-# Referensi
