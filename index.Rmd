@@ -111,7 +111,8 @@ labs (title = "plot titik-titik lizard",x="total length",y="common_name")
 
 ```{r}
 ggplot(lizard,aes(y=common_name))+
-  geom_bar()
+  geom_bar(color="red", fill="blue")+
+  labs(title = "plot bar lizerd",x="total length",y="common name")
 ```
 
 ```{r}
