@@ -1,5 +1,5 @@
 ---
-title: "Belajar Data visualziation dengan ggplot"
+title: "Belajar Data visualziation dengan GGPLOT2"
 author: "ardika alaudin arsa - Institut Teknologi Statistika dan Bisnis Muhammadiyah"
 date: "`r Sys.Date()`"
 output: 
@@ -83,12 +83,56 @@ View(lizard)
 berikut contoh grafik :
 
 ```{r}
-ggplot(lizard, aes(x = total_length, y = weight))+
+ggplot(lizard, aes(x = total_length, y = weight,))+
+  geom_point(color="black")+
+  labs(title = "plot titik", x = "sumbu total_length", y = "sumbu weight")+
+  theme_classic()
+```
+
+
+```{r}
+ggplot(lizard, aes(x=total_length, y=common_name))+
+  geom_jitter(color="pink")+
+  labs (title = "plot titik-titik lizzrd", x="total_length",y="common_name")
+```
+
+
+```{r}
+ggplot(lizard,aes(x=total_length))+
+  geom_histogram(color="black", fill="pink")+
+labs(title = "plot titik-titik lizard",x="total length")
+```
+
+```{r}
+ggplot(lizard,aes(x=total_length,y=common_name))+
+  geom_line(color="red")+
+labs (title = "plot titik-titik lizard",x="total length",y="common_name")
+```
+
+```{r}
+ggplot(lizard,aes(y=common_name))+
+  geom_bar()
+```
+
+```{r}
+ggplot(lizard, aes(x = total_length, y = weight,color=common_name))+
   geom_point()+
   labs(title = "plot titik", x = "sumbu total_length", y = "sumbu weight")+
   theme_classic()
 ```
 
+```{r}
+ggplot(lizard, aes(x=total_length, y=common_name))+
+  geom_jitter(color="purple", size=12)+
+  labs (title = "plot titik-titik lizzrd", x="total_length",y="common_name")
+```
+
+```{r}
+ggplot(lizard, aes(x = total_length, y = weight,))+
+  geom_point(color="green", shape=2)+
+  labs(title = "plot titik", x = "sumbu total_length", y = "sumbu weight")+
+  theme_classic()
+```
 
 ```{=html}
 <style>
@@ -99,4 +143,3 @@ text-align: justify}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
