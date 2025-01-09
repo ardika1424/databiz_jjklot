@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    background-color: #ffffff; /* Warna latar belakang putih */
+    background-color: #FF0000; /* Warna latar belakang putih */
     color: #333; /* Warna teks default */
     font-family: Arial, sans-serif; /* Font yang digunakan */
 }
@@ -10,7 +10,7 @@ h1 {
 }
 
 h2 {
-    color: #33ff57; /* Hijau cerah */
+    color: #33fffff57; /* Hijau cerah */
 }
 
 h3 {
@@ -18,11 +18,11 @@ h3 {
 }
 
 h4 {
-    color: #ff33a1; /* Pink cerah */
+    color: #800080; /* Pink cerah */
 }
 
 h5 {
-    color: #ffcc33; /* Kuning cerah */
+    color: #0000FF; /* Kuning cerah */
 }
 
 h6 {
