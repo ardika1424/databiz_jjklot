@@ -135,6 +135,45 @@ ggplot(lizard, aes(x = total_length, y = weight,))+
   theme_classic()
 ```
 
+# Animasi Grafik dengan gganimate
+
+```{r}
+library(gapminder)
+library(ggplot2)
+library(gganimate)
+data=gapminder
+data
+```
+
+```{r}
+ggplot(data, aes(x = gdpPercap, y = lifeExp)) + geom_point(shape = 6)+
+  labs(title = "gapminder", x = "GDP", y = "life expectancy")
+```
+
+```{r}
+gapminder_plat<-ggplot(
+  gapminder,
+  aes(x = gdpPercap, y = lifeExp, size = pop, colour = continent)
+)+
+geom_point(alpha = 0.6)+
+  scale_x_log10()+
+  scale_colour_viridis_d(option = "viridis")+
+  labs(x = "GDP per capita", y = "life expectancy")
+gapminder_plat
+```
+
+```{r}
+gapminder_plat<-ggplot(
+  gapminder,
+  aes(x = gdpPercap, y = lifeExp, size = pop, colour = continent)
+)+
+geom_point(alpha = 0.6)+
+  scale_x_log10()+
+  scale_colour_viridis_d(option = "magma")+
+  labs(x = "GDP per capita", y = "life expectancy")
+gapminder_plat
+```
+
 ```{=html}
 <style>
 body{
